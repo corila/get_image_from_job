@@ -44,8 +44,8 @@ class StockController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$imageDimensions = array('width' => $this->settings['imageDimensions']['width'][$this->settings['imageSize']],
 								'height' => $this->settings['imageDimensions']['height'][$this->settings['imageSize']]);
 		foreach ($images as $key => $image) {
-			$realName = str_replace('###size###', '-' .$this->settings['imageSize'] . '-', $image);
-			$images[$key] = htmlspecialchars_decode($imagePath . $realName);
+			$realName = str_replace('###size###', '-' .$this->settings['imageSize'] . '-', $image['name']);
+			$images[$key]['name'] = htmlspecialchars_decode($imagePath . $realName);
 		}
 		$this->view->assign('images', $images);
 		$this->view->assign('imageDimensions', $imageDimensions);

@@ -15,11 +15,26 @@ plugin.tx_juliusbaerstock {
 	settings {
 		imagePath = {$plugin.tx_juliusbaerstock.settings.imagePath}
 		ImageName {
-			intraday = {$plugin.tx_juliusbaerstock.settings.imageName.intraday}
-			month = {$plugin.tx_juliusbaerstock.settings.imageName.month}
-			threeMonths = {$plugin.tx_juliusbaerstock.settings.imageName.threeMonths}
-			year = {$plugin.tx_juliusbaerstock.settings.imageName.year}
-			fiveYears = {$plugin.tx_juliusbaerstock.settings.imageName.fiveYears}
+			intraday {
+				label = INTRADAY
+				name = {$plugin.tx_juliusbaerstock.settings.imageName.intraday}
+			}
+			month {
+				label = MONTH
+				name = {$plugin.tx_juliusbaerstock.settings.imageName.month}
+			}
+			threeMonths {
+				label = 3 MONTHS
+				name = {$plugin.tx_juliusbaerstock.settings.imageName.threeMonths}
+			}
+			year {
+				label = YEAR
+				name = {$plugin.tx_juliusbaerstock.settings.imageName.year}
+			}
+			fiveYears {
+				label = 5 YEARS
+				name = {$plugin.tx_juliusbaerstock.settings.imageName.fiveYears}
+			}
 		}
 
 		imageDimensions {
