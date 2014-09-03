@@ -1,0 +1,27 @@
+
+plugin.tx_juliusbaerstock {
+	view {
+		# cat=plugin.tx_juliusbaerstock/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:juliusbaer_stock/Resources/Private/Templates/
+		# cat=plugin.tx_juliusbaerstock/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:juliusbaer_stock/Resources/Private/Partials/
+		# cat=plugin.tx_juliusbaerstock/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:juliusbaer_stock/Resources/Private/Layouts/
+	}
+
+	persistence {
+		# cat=plugin.tx_juliusbaerstock//a; type=string; label=Default storage PID
+		storagePid =
+	}
+
+	settings {
+		imagePath = uploads/tx_juliusbaerstock/
+		imageName {
+			intraday = Chart###size###Intraday.gif
+			month = Chart###size###Month.gif
+			threeMonths = Chart###size###3-Months.gif
+			year = Chart###size###Year.gif
+			fiveYears = Chart###size###5-Years.gif
+		}
+	}
+}

@@ -1,0 +1,38 @@
+
+plugin.tx_juliusbaerstock {
+	view {
+		templateRootPath = {$plugin.tx_juliusbaerstock.view.templateRootPath}
+		partialRootPath = {$plugin.tx_juliusbaerstock.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_juliusbaerstock.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_juliusbaerstock.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+	settings {
+		imagePath = {$plugin.tx_juliusbaerstock.settings.imagePath}
+		ImageName {
+			intraday = {$plugin.tx_juliusbaerstock.settings.imageName.intraday}
+			month = {$plugin.tx_juliusbaerstock.settings.imageName.month}
+			threeMonths = {$plugin.tx_juliusbaerstock.settings.imageName.threeMonths}
+			year = {$plugin.tx_juliusbaerstock.settings.imageName.year}
+			fiveYears = {$plugin.tx_juliusbaerstock.settings.imageName.fiveYears}
+		}
+
+		imageDimensions {
+			width {
+				Large = 548
+				Small = 140
+				Mobile = 260
+			}
+			height {
+				Large = 300
+				Small = 100
+				Mobile = 200
+			}
+		}
+	}
+}

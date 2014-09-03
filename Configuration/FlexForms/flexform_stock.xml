@@ -1,0 +1,42 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:juliusbaer_stock/Resources/Private/Language/locallang_be.xlf:flexform_settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.imageSize>
+						<TCEforms>
+							<label>LLL:EXT:juliusbaer_stock/Resources/Private/Language/locallang_be.xlf:flexform_settings.image_side</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:juliusbaer_stock/Resources/Private/Language/locallang_be.xlf:flexform_settings.image_side.options.large</numIndex>
+										<numIndex index="1">Large</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:juliusbaer_stock/Resources/Private/Language/locallang_be.xlf:flexform_settings.image_side.options.medium</numIndex>
+										<numIndex index="1">Small</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:juliusbaer_stock/Resources/Private/Language/locallang_be.xlf:flexform_settings.image_side.options.mobile</numIndex>
+										<numIndex index="1">Mobile</numIndex>
+									</numIndex>
+								</items>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</settings.imageSize>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>
