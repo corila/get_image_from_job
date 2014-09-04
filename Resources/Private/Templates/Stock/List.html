@@ -13,7 +13,14 @@
 	<div class="carousel-inner">
 		<f:for each="{images}" as="image" iteration="itemIteration">
 			<div class="item {f:if(condition: itemIteration.isFirst, then: 'active')}">
-				<f:image src="{image.name}" width="{imageDimensions.width}" height="{imageDimensions.height}"/>
+				<f:if condition="{image.name}">
+					<f:then>
+						<f:image src="{image.name}" width="{imageDimensions.width}" height="{imageDimensions.height}"/>
+					</f:then>
+					<f:else>
+						<f:image src="EXT:juliusbaer_stock/Resources/Public/Icons/no-volume-available.gif" width="{imageDimensions.width}" height="{imageDimensions.width}"/>
+					</f:else>
+				</f:if>
 			</div>
 		</f:for>
 	</div>

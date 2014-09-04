@@ -29,13 +29,45 @@ namespace DS360\JuliusbaerStock\Command;
 class UpdateImageCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandController {
 
 	/**
-	 * @param string $imageURLs The URLs of intranet to get image
+	 * @param string $imageLargeIntradayURL Image Large for Intraday URL:
+	 * @param string $imageLargeMonthURL Image Large for a Month URL:
+	 * @param string $imageLarge3MonthsURL Image Large for 3 Months URL:
+	 * @param string $imageLargeYearURL Image Large for a Year URL :
+	 * @param string $imageLarge5YearsURL Image Large for 5 Years URL :
+	 * @param string $imageSmallIntradayURL Image Small for Intra day URL :
+	 * @param string $imageSmallMonthURL Image Small for a Month URL :
+	 * @param string $imageSmall3MonthsURL Image Small for 3 Months URL:
+	 * @param string $imageSmallYearURL Image Small for a Year URL :
+	 * @param string $imageSmall5YearsURL Image Small for 5 Years URL :
+	 * @param string $imageMobileIntradayURL Image Mobile for Intraday URL :
+	 * @param string $imageMobileMonthURL Image Mobile for a Month URL :
+	 * @param string $imageMobile3MonthsURL Image Mobile for 3 Months URL :
+	 * @param string $imageMobileYearURL Image Mobile for a Year URL :
+	 * @param string $imageMobile5YearsURL Image Mobile for 5 Years URL :
 	 */
-	public function updateImageCommand($imageURLs = NULL) {
-		$imageURLs = explode(',', $imageURLs);
-		foreach($imageURLs as $imageURL) {
+	public function updateImageCommand($imageLargeIntradayURL = NULL, $imageLargeMonthURL = NULL, $imageLarge3MonthsURL = NULL, $imageLargeYearURL = NULL, $imageLarge5YearsURL = NULL,
+									   $imageSmallIntradayURL = NULL, $imageSmallMonthURL = NULL, $imageSmall3MonthsURL = NULL, $imageSmallYearURL = NULL, $imageSmall5YearsURL = NULL,
+									   $imageMobileIntradayURL = NULL, $imageMobileMonthURL = NULL, $imageMobile3MonthsURL = NULL, $imageMobileYearURL = NULL, $imageMobile5YearsURL = NULL) {
+		$imageURLs = array(
+			'Chart-Large-Intraday' => $imageLargeIntradayURL,
+			'Chart-Large-Month' => $imageLargeMonthURL,
+			'Chart-Large-3-Months' => $imageLarge3MonthsURL,
+			'Chart-Large-Year' => $imageLargeYearURL,
+			'Chart-Large-5-Years' => $imageLarge5YearsURL,
+			'Chart-Small-Intraday' => $imageSmallIntradayURL,
+			'Chart-Small-Month' => $imageSmallMonthURL,
+			'Chart-Small-3-Months' => $imageSmall3MonthsURL,
+			'Chart-Small-Year' => $imageSmallYearURL,
+			'Chart-Small-5-Years' => $imageSmall5YearsURL,
+			'Chart-Mobile-Intraday' => $imageMobileIntradayURL,
+			'Chart-Mobile-Month' => $imageMobileMonthURL,
+			'Chart-Mobile-3-Months' => $imageMobile3MonthsURL,
+			'Chart-Mobile-Year' => $imageMobileYearURL,
+			'Chart-Mobile-5-Years' => $imageMobile5YearsURL
+		);
+		foreach($imageURLs as $imageName => $imageURL) {
 			if ($this->checkRemoteFile($imageURL)) {
-				$imageName = $_SERVER['DOCUMENT_ROOT'] . '/uploads/tx_juliusbaerstock/' . 'a4.jpg';
+				$imageName = $_SERVER['DOCUMENT_ROOT'] . '/uploads/tx_juliusbaerstock/' . $imageName . '.gif';
 				if (ini_get('allow_url_fopen')) {
 					file_put_contents($imageName, file_get_contents($imageURL));
 				} else {
@@ -50,7 +82,6 @@ class UpdateImageCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\Com
 			}
 		}
 	}
-
 
 	/**
 	 * Check if image from remote url have or not

@@ -38,17 +38,25 @@ class StockController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @return void
 	 */
 	public function listAction() {
-		$this->settings['imageSize'];
-		$imagePath = $this->settings['imagePath'];
-		$images = $this->settings['ImageName'];
 		$imageDimensions = array('width' => $this->settings['imageDimensions']['width'][$this->settings['imageSize']],
 								'height' => $this->settings['imageDimensions']['height'][$this->settings['imageSize']]);
-		foreach ($images as $key => $image) {
-			$realName = str_replace('###size###', '-' .$this->settings['imageSize'] . '-', $image['name']);
-			$images[$key]['name'] = htmlspecialchars_decode($imagePath . $realName);
-		}
-		$this->view->assign('images', $images);
+		$this->view->assign('images', $this->getImagesPart());
 		$this->view->assign('imageDimensions', $imageDimensions);
 	}
+
+	private function getImagesPart() {
+		$images = $this->settings['ImagesName'];
+		foreach ($images as $key => $image) {
+			$realName = str_replace('###size###', '-' .$this->settings['imageSize'] . '-', $image['name']);
+			$imagePath = $this->settings['imagePath'] . $realName;
+			if (file_exists($imagePath)) {
+				$images[$key]['name'] = htmlspecialchars_decode($imagePath);
+			} else {
+				$images[$key]['name'] = 0;
+			}
+		}
+		return $images;
+	}
+
 
 }

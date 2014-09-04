@@ -14,7 +14,7 @@ plugin.tx_juliusbaerstock {
 	}
 	settings {
 		imagePath = {$plugin.tx_juliusbaerstock.settings.imagePath}
-		ImageName {
+		ImagesName {
 			intraday {
 				label = INTRADAY
 				name = {$plugin.tx_juliusbaerstock.settings.imageName.intraday}
