@@ -39,7 +39,7 @@ class StockController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 */
 	public function listAction() {
 		$imageDimensions = array('width' => $this->settings['imageDimensions']['width'][$this->settings['imageSize']],
-								'height' => $this->settings['imageDimensions']['height'][$this->settings['imageSize']]);
+								 'height' => $this->settings['imageDimensions']['height'][$this->settings['imageSize']]);
 		$this->view->assign('images', $this->getImagesPart());
 		$this->view->assign('imageDimensions', $imageDimensions);
 	}
@@ -57,6 +57,4 @@ class StockController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		}
 		return $images;
 	}
-
-
 }
