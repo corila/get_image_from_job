@@ -5,7 +5,7 @@
 	<ul class="stock-info">
 		<f:for each="{images}" as="image" iteration="itemIteration">
 			<li data-target="#carousel-example-generic" data-slide-to="{itemIteration.index}" class="{f:if(condition: itemIteration.isFirst, then: 'active')}">
-				<a href="#"><span class="icon icon-uniE60B"></span> {image.label}</a>
+				<a href="#"><span class="icon-arrow-slide-right-font"></span> {image.label}</a>
 			</li>
 		</f:for>
 	</ul>

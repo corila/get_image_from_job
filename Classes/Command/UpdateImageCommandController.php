@@ -26,45 +26,108 @@ namespace DS360\JuliusbaerStock\Command;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-class UpdateImageCommandController extends \TYPO3\CMS\Extbase\Mvc\Controller\CommandController {
+class UpdateImageCommandController extends \TYPO3\CMS\Scheduler\Task\AbstractTask {
+	/**
+	 * @var string $imageLargeIntradayURL
+	 */
+	public $imageLargeIntradayURL;
 
 	/**
-	 * @param string $imageLargeIntradayURL Image Large for Intraday URL:
-	 * @param string $imageLargeMonthURL Image Large for a Month URL:
-	 * @param string $imageLarge3MonthsURL Image Large for 3 Months URL:
-	 * @param string $imageLargeYearURL Image Large for a Year URL :
-	 * @param string $imageLarge5YearsURL Image Large for 5 Years URL :
-	 * @param string $imageSmallIntradayURL Image Small for Intra day URL :
-	 * @param string $imageSmallMonthURL Image Small for a Month URL :
-	 * @param string $imageSmall3MonthsURL Image Small for 3 Months URL:
-	 * @param string $imageSmallYearURL Image Small for a Year URL :
-	 * @param string $imageSmall5YearsURL Image Small for 5 Years URL :
-	 * @param string $imageMobileIntradayURL Image Mobile for Intraday URL :
-	 * @param string $imageMobileMonthURL Image Mobile for a Month URL :
-	 * @param string $imageMobile3MonthsURL Image Mobile for 3 Months URL :
-	 * @param string $imageMobileYearURL Image Mobile for a Year URL :
-	 * @param string $imageMobile5YearsURL Image Mobile for 5 Years URL :
+	 * @var string $imageLargeMonthURL
 	 */
-	public function updateImageCommand($imageLargeIntradayURL = NULL, $imageLargeMonthURL = NULL, $imageLarge3MonthsURL = NULL, $imageLargeYearURL = NULL, $imageLarge5YearsURL = NULL,
-									   $imageSmallIntradayURL = NULL, $imageSmallMonthURL = NULL, $imageSmall3MonthsURL = NULL, $imageSmallYearURL = NULL, $imageSmall5YearsURL = NULL,
-									   $imageMobileIntradayURL = NULL, $imageMobileMonthURL = NULL, $imageMobile3MonthsURL = NULL, $imageMobileYearURL = NULL, $imageMobile5YearsURL = NULL) {
+	public $imageLargeMonthURL;
+	/**
+	 * @var string $imageLarge3MonthsURL
+	 */
+	public $imageLarge3MonthsURL;
+	/**
+	 * @var string $imageLargeYearURL
+	 */
+	public $imageLargeYearURL;
+	/**
+	 * @var string $imageLarge5YearsURL
+	 */
+	public $imageLarge5YearsURL;
+	/**
+	 * @var string $imageSmallIntradayURL
+	 */
+	public $imageSmallIntradayURL;
+	/**
+	 * @var string $imageSmallMonthURL
+	 */
+	public $imageSmallMonthURL;
+	/**
+	 * @var string $imageSmall3MonthsURL
+	 */
+	public $imageSmall3MonthsURL;
+	/**
+	 * @var string $imageSmallYearURL
+	 */
+	public $imageSmallYearURL;
+	/**
+	 * @var string $imageSmall5YearsURL
+	 */
+	public $imageSmall5YearsURL;
+	/**
+	 * @var string $imageMobileIntradayURL
+	 */
+	public $imageMobileIntradayURL;
+	/**
+	 * @var string $imageMobileMonthURL
+	 */
+	public $imageMobileMonthURL;
+	/**
+	 * @var string $imageMobile3MonthsURL
+	 */
+	public $imageMobile3MonthsURL;
+	/**
+	 * @var string $imageMobileYearURL
+	 */
+	public $imageMobileYearURL;
+	/**
+	 * @var string $imageMobile5YearsURL
+	 */
+	public $imageMobile5YearsURL;
+
+
+	/**
+	 * Function executed from the Scheduler.
+	 * Sends an email
+	 *
+	 * @return boolean
+	 */
+	public function execute() {
 		$imageURLs = array(
-			'Chart-Large-Intraday' => $imageLargeIntradayURL,
-			'Chart-Large-Month' => $imageLargeMonthURL,
-			'Chart-Large-3-Months' => $imageLarge3MonthsURL,
-			'Chart-Large-Year' => $imageLargeYearURL,
-			'Chart-Large-5-Years' => $imageLarge5YearsURL,
-			'Chart-Small-Intraday' => $imageSmallIntradayURL,
-			'Chart-Small-Month' => $imageSmallMonthURL,
-			'Chart-Small-3-Months' => $imageSmall3MonthsURL,
-			'Chart-Small-Year' => $imageSmallYearURL,
-			'Chart-Small-5-Years' => $imageSmall5YearsURL,
-			'Chart-Mobile-Intraday' => $imageMobileIntradayURL,
-			'Chart-Mobile-Month' => $imageMobileMonthURL,
-			'Chart-Mobile-3-Months' => $imageMobile3MonthsURL,
-			'Chart-Mobile-Year' => $imageMobileYearURL,
-			'Chart-Mobile-5-Years' => $imageMobile5YearsURL
+			'Chart-Large-Intraday' => $this->imageLargeIntradayURL,
+			'Chart-Large-Month' => $this->imageLargeMonthURL,
+			'Chart-Large-3-Months' => $this->imageLarge3MonthsURL,
+			'Chart-Large-Year' => $this->imageLargeYearURL,
+			'Chart-Large-5-Years' => $this->imageLarge5YearsURL,
+			'Chart-Small-Intraday' => $this->imageSmallIntradayURL,
+			'Chart-Small-Month' => $this->imageSmallMonthURL,
+			'Chart-Small-3-Months' => $this->imageSmall3MonthsURL,
+			'Chart-Small-Year' => $this->imageSmallYearURL,
+			'Chart-Small-5-Years' => $this->imageSmall5YearsURL,
+			'Chart-Mobile-Intraday' => $this->imageMobileIntradayURL,
+			'Chart-Mobile-Month' => $this->imageMobileMonthURL,
+			'Chart-Mobile-3-Months' => $this->imageMobile3MonthsURL,
+			'Chart-Mobile-Year' => $this->imageMobileYearURL,
+			'Chart-Mobile-5-Years' => $this->imageMobile5YearsURL
 		);
+		$this->updateImageCommand($imageURLs);
+		return TRUE;
+	}
+
+	/**
+	 * This method returns the destination mail address as additional information
+	 *
+	 * @return string Information to display
+	 */
+	public function getAdditionalInformation() {
+		return $GLOBALS['LANG']->sL('LLL:EXT:juliusbaer_stock/Resources/Private/Language/locallang.xlf:update_image_stock.description');
+	}
+
+	private function updateImageCommand($imageURLs = array()) {
 		foreach($imageURLs as $imageName => $imageURL) {
 			if ($this->checkRemoteFile($imageURL)) {
 				$imageName = $_SERVER['DOCUMENT_ROOT'] . '/uploads/tx_juliusbaerstock/' . $imageName . '.gif';

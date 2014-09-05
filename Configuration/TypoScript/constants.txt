@@ -23,5 +23,17 @@ plugin.tx_juliusbaerstock {
 			year = Chart###size###Year.gif
 			fiveYears = Chart###size###5-Years.gif
 		}
+		imageDimensions {
+			width {
+				Large = 548
+				Small = 140
+				Mobile = 260
+			}
+			height {
+				Large = 300
+				Small = 100
+				Mobile = 200
+			}
+		}
 	}
 }

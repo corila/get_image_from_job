@@ -3,8 +3,59 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-02T15:31:10Z" product-name="juliusbaer_stock">
 		<header/>
 		<body>
-			<trans-unit id="tx_juliusbaerstock_domain_model_stock">
-				<source>Stock</source>
+			<trans-unit id="update_image_stock.name">
+				<source>Update Image Stock</source>
+			</trans-unit>
+			<trans-unit id="update_image_stock.description">
+				<source>Update Stock Image from providing URLs</source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageMobile5YearsURL">
+				<source>URL of Image Mobile for 5 Years: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageLargeIntradayURL">
+				<source>URL of Large Image for Intraday: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageLargeMonthURL">
+				<source>URL of Large Image for a Month: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageLarge3MonthsURL">
+				<source>URL of Large Image for 3 Month: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageLargeYearURL">
+				<source>URL of Large Image for a Year: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageLarge5YearsURL">
+				<source>URL of Large Image for 5 Years: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageSmallIntradayURL">
+				<source>URL of Small Image for Intraday: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageSmallMonthURL">
+				<source>URL of Small Image for a Month: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageSmall3MonthsURL">
+				<source>URL of Small Image for 3 Months: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageSmallYearURL">
+				<source>URL of Small Image for a Year: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageSmall5YearsURL">
+				<source>URL of Small Image for 5 Years: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageMobileIntradayURL">
+				<source>URL of Image Mobile for Intraday: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageMobileMonthURL">
+				<source>URL of Image Mobile for a Month: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageMobile3MonthsURL">
+				<source>URL of Image Mobile for 3 Months: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageMobileYearURL">
+				<source>URL of Image Mobile for a Year: </source>
+			</trans-unit>
+			<trans-unit id="tx_juliusbaerstock_label.imageMobile5YearsURL">
+				<source>URL of Image Mobile for 5 Years: </source>
 			</trans-unit>
 		</body>
 	</file>

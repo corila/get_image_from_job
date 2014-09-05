@@ -39,14 +39,14 @@ plugin.tx_juliusbaerstock {
 
 		imageDimensions {
 			width {
-				Large = 548
-				Small = 140
-				Mobile = 260
+				Large = {$plugin.tx_juliusbaerstock.settings.imageDimensions.width.Large}
+				Small = {$plugin.tx_juliusbaerstock.settings.imageDimensions.width.Small}
+				Mobile = {$plugin.tx_juliusbaerstock.settings.imageDimensions.width.Mobile}
 			}
 			height {
-				Large = 300
-				Small = 100
-				Mobile = 200
+				Large = {$plugin.tx_juliusbaerstock.settings.imageDimensions.height.Large}
+				Small = {$plugin.tx_juliusbaerstock.settings.imageDimensions.height.Small}
+				Mobile = {$plugin.tx_juliusbaerstock.settings.imageDimensions.height.Mobile}
 			}
 		}
 	}
